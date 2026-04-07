@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="unified.css">
+    <title>404</title>
+</head>
+<body>
+    
+    <div class="header">
+        <div id="proyecto">Mikhail Tolubaev</div>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <ul class="menu" id="menu">
+            <li><a href="mretratos.html">Portraits</a></li>
+            <li><a href="meventos.html">Events</a></li>
+            <li><a href="mstreet.html">Street</a></li>
+            <li><a href="mcontacto.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Error 404</h1>
+        <p>Página no encontrada.</p>
+        <a href="mretratos.html">Return to portraits</a>
+    </div>
+    
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+    
+</body>
+</html>

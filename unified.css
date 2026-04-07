@@ -1,0 +1,386 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #1f2a33;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+}
+
+#proyecto {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* FIX: hamburger hidden by default */
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* CURSOR */
+.cursor {
+    width: 12px;
+    height: 12px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-grow {
+    transform: translate(-50%, -50%) scale(2);
+}
+
+/* GALLERY */
+.intro {
+    padding: 140px 40px 40px;
+}
+
+.galeria {
+    column-count: 3;
+    column-gap: 24px;
+    padding: 0 40px 60px;
+}
+
+.foto {
+    break-inside: avoid;
+    margin-bottom: 24px;
+}
+
+/* 🔥 FIX: hover animation */
+.foto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.04);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left { left: 20px; }
+.right { right: 20px; }
+
+/* CONTACT BUTTONS */
+.contact-wrapper {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+}
+
+.contact-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.contact-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white !important;
+}
+
+.contact-btn:hover {
+    transform: scale(1.08);
+}
+
+/* 🔥 MOBILE FIXES */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .galeria {
+        column-count: 1;
+    }
+
+    /* FIX cursor on mobile */
+    body { cursor: auto !important; }
+    .cursor { display: none; }
+}
+
+
+/* HIDE DEFAULT CURSOR ONLY ON DESKTOP */
+@media (min-width: 769px) {
+    body {
+        cursor: none;
+    }
+
+    a, button, input, textarea, select, img {
+        cursor: none;
+    }
+}
+
+/* ===== CONTACT PAGE STYLES (RESTORE) ===== */
+
+.contact-hero {
+    padding: 140px 20px 80px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: white;
+    color: black;
+}
+
+/* PRICING */
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 25px;
+    width: 220px;
+    text-align: center;
+}
+
+.price {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    opacity: 0.8;
+}
+
+/* FORM */
+.contact-form {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: white;
+    color: black;
+}
+
+/* TRUST */
+.trust {
+    text-align: center;
+    padding: 40px 20px 80px;
+    opacity: 0.6;
+}
+
+/* DARK INPUTS */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    background: #1b2527;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.contact-form select {
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* ===== PREMIUM GLOW ===== */
+
+.contact-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+/* base glow */
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* WhatsApp glow */
+.contact-btn.whatsapp::before {
+    background: radial-gradient(circle, rgba(37,211,102,0.6), transparent 70%);
+}
+
+/* Instagram glow */
+.contact-btn.instagram::before {
+    background: radial-gradient(circle, rgba(225,48,108,0.6), transparent 70%);
+}
+
+/* hover activate */
+.contact-btn:hover::before {
+    opacity: 1;
+}
+
+/* subtle lift */
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-weight: 300;
+}
