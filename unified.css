@@ -76,6 +76,11 @@ body.loaded {
     transform: translate(-50%, -50%) scale(2);
 }
 
+/* ===== FORCE HIDE DEFAULT CURSOR ===== */
+* {
+    cursor: none !important;
+}
+
 /* GALLERY */
 .intro {
     padding: 140px 40px 40px;
