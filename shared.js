@@ -1,15 +1,52 @@
-// WAIT until page + images are loaded
+// ===== FADE IN (FIX BLANK PAGE) =====
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+// ===== MENU =====
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+}
+
+// ===== CURSOR =====
+const cursor = document.getElementById("cursor");
+
+if (cursor) {
+    document.addEventListener("mousemove", e => {
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+    });
+
+    document.addEventListener("mouseover", e => {
+        if (e.target.matches("a, img")) {
+            cursor.classList.add("cursor-grow");
+        }
+    });
+
+    document.addEventListener("mouseout", e => {
+        if (e.target.matches("a, img")) {
+            cursor.classList.remove("cursor-grow");
+        }
+    });
+}
+
+// ===== LIGHTBOX =====
 window.addEventListener("load", () => {
 
     const images = document.querySelectorAll(".foto img");
-
     const lightbox = document.getElementById("lightbox");
+
+    if (!images.length || !lightbox) return;
+
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.getElementById("close");
     const nextBtn = document.getElementById("next");
     const prevBtn = document.getElementById("prev");
-
-    if (!images.length || !lightbox) return;
 
     let currentIndex = 0;
 
@@ -38,28 +75,5 @@ window.addEventListener("load", () => {
     if (nextBtn) nextBtn.onclick = nextImage;
     if (prevBtn) prevBtn.onclick = prevImage;
     if (closeBtn) closeBtn.onclick = () => lightbox.style.display = "none";
-
-    // keyboard
-    document.addEventListener("keydown", (e) => {
-        if (lightbox.style.display === "flex") {
-            if (e.key === "ArrowRight") nextImage();
-            if (e.key === "ArrowLeft") prevImage();
-            if (e.key === "Escape") lightbox.style.display = "none";
-        }
-    });
-
-    // swipe
-    let startX = 0;
-
-    lightbox.addEventListener("touchstart", e => {
-        startX = e.touches[0].clientX;
-    });
-
-    lightbox.addEventListener("touchend", e => {
-        let diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) {
-            diff > 0 ? nextImage() : prevImage();
-        }
-    });
 
 });
