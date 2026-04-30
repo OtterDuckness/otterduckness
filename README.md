@@ -90,4 +90,97 @@ Mikhail Tolubaev
 - Focused on simplicity, visuals, and usability  
 - Built from scratch without libraries  
 - Will likely evolve over time as I improve  
+
+ __________________________________________________________________________________________________
+ # 🌐 OtterDuckness - Sitio Web Personal
  
+Este repositorio contiene mi sitio web personal:  
+👉 https://mikhailtolubaev.com
+ 
+Es un portafolio de fotografía creado con mis propias imágenes, diseñado para mostrar y promocionar mi hobby.
+ 
+---
+ 
+## 📌 Descripción
+ 
+Este proyecto es una página web estática donde presento mi trabajo fotográfico, incluyendo retratos, eventos y fotografía urbana.
+ 
+El objetivo era crear algo simple, limpio y personal — no solo funcional, sino también visualmente coherente con mi estilo.
+ 
+---
+ 
+## 🧠 Qué he aprendido
+ 
+Trabajar en este proyecto me ayudó a entender:
+ 
+### 🔹 Desarrollo Frontend
+- Estructurar páginas con HTML  
+- Dar estilo a los diseños con CSS  
+- Organizar navegación entre múltiples páginas  
+
+---
+ 
+### 🔹 JavaScript e interactividad
+- Galerías de imágenes dinámicas usando arrays en JavaScript  
+- Sistema de lightbox con navegación (siguiente/anterior, teclado, swipe)  
+- Menú móvil desplegable  
+- Manipulación del DOM y manejo de eventos  
+
+---
+ 
+### 🔹 UI / UX
+- Efectos de cursor personalizados e interacciones hover  
+- Diseño responsive para dispositivos móviles  
+- Diseño limpio y espaciado enfocado en el contenido visual  
+
+---
+ 
+### 🔹 Experiencia en proyectos reales
+- Convertir un hobby en un producto real  
+- Estructurar una web completa (múltiples páginas, navegación, contacto)  
+- Pensar en la experiencia de usuario, no solo en el código  
+
+---
+ 
+## 🛠️ Tecnologías utilizadas
+ 
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (Vanilla)**  
+- **Git & GitHub Pages**  
+ 
+---
+ 
+## 🎯 Objetivo del proyecto
+ 
+- Mostrar mi fotografía  
+- Tener un portafolio online  
+- Permitir que la gente contacte conmigo para sesiones  
+- Practicar desarrollo web en un proyecto real  
+ 
+---
+ 
+## 📂 Estructura
+ 
+- `mretratos.html` → Fotografía de retratos  
+- `meventos.html` → Eventos  
+- `mstreet.html` → Fotografía urbana  
+- `mcontacto.html` → Página de contacto / reservas  
+- `unified.css` → Estilos principales  
+- `shared.js` → Funcionalidad compartida  
+ 
+---
+ 
+## ✍️ Autor
+ 
+Mikhail Tolubaev  
+- GitHub: https://github.com/OtterDuckness  
+ 
+---
+ 
+## 📎 Notas
+ 
+- Es un proyecto personal, no una aplicación compleja con frameworks  
+- Enfocado en simplicidad, estética y usabilidad  
+- Hecho desde cero sin librerías  
+- Probablemente seguirá evolucionando con el tiempo  
